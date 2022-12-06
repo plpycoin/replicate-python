@@ -29,7 +29,7 @@ class Version(BaseModel):
         prediction.wait()
         if prediction.status == "failed":
             raise ModelError(prediction.error)
-        return prediction.output
+        return prediction
 
     def get_transformed_schema(self):
         schema = self.openapi_schema
